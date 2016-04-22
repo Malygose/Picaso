@@ -1,6 +1,10 @@
 var path = require('path');
 
 var uuid = require('node-uuid');
+var optimist = require('optimist');
+
+var nodeModulesPath = process.env.PWD;
+if (optimist.argv.nodeModulesPath) nodeModulesPath = optimist.argv.nodeModulesPath;
 
 /**
  * default.js为最基本的配置文件，如果在本地开发时需要改动部分设置，请在同文件夹内建立local.js，并在local.js里修改需要改动的属性即可
@@ -16,7 +20,7 @@ module.exports = {
         authorizationFile: 'npm.key', // 存放用于安装私有模块时所需的key的文件名
         config: {}, // npm加载配置（相关配置内容参考 https://github.com/npm/npm）
         registry: {
-            local: 'http://registry.npm.taobao.org/', // 本地registry镜像地址
+            local: 'http://127.0.0.1:7001/', // 本地registry镜像地址
             offical: 'https://registry.npmjs.org/', // 官方registry镜像地址
             taobao: 'https://registry.npm.taobao.org/' // 淘宝registry镜像地址
         }
@@ -36,9 +40,9 @@ module.exports = {
                 shim: 'socket',
                 version: '1.3.7'
             }, {
-                file: [path.join(process.env.PWD, './node_modules/bootstrap/less/bootstrap.less')], // 当前模块需要手动引用的样式，可以为空
+                file: [path.join(nodeModulesPath, './node_modules/bootstrap/less/bootstrap.less')], // 当前模块需要手动引用的样式，可以为空
                 module: 'bootstrap',
-                path: [path.join(process.env.PWD, './node_modules/bootstrap/dist')], // 当前模块的静态资源目录，可以为空
+                path: [path.join(nodeModulesPath, './node_modules/bootstrap/dist')], // 当前模块的静态资源目录，可以为空
                 version: '3.3.5'
             }, {
                 module: 'angular',

@@ -4,10 +4,9 @@
     "description": "Picaso示范项目。",
     "main": "index.js",
     "scripts": {
-        "dev": "NODE_ENV=development node index.js",
-        "pro": "NODE_ENV=production node index.js",
+        "production": "NODE_ENV=production node index.js --nodeModulesPath=/data",
         "build": "npm i; node ./build",
-        "start": "node index.js"
+        "develop": "node index.js --nodeModulesPath=/data"
     },
     "repository": {
         "type": "git",
@@ -28,7 +27,9 @@
         "config": "1.16.0",
         "node-uuid": "1.4.3",
         "npm": "3.3.6",
+        "optimist": "0.6.1",
         "picaso": "1.0.2",
+        "picaso.utils": "1.0.1",
         "resolve": "1.1.6"
     }
 }
