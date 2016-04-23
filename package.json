@@ -1,5 +1,5 @@
 {
-    "name": "picaso",
+    "name": "picaso.demo",
     "version": "1.0.0",
     "description": "Picaso示范项目。",
     "main": "index.js",
