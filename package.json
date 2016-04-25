@@ -28,7 +28,7 @@
         "node-uuid": "1.4.3",
         "npm": "3.3.6",
         "optimist": "0.6.1",
-        "picaso": "1.0.2",
+        "picaso": "1.1.0",
         "picaso.utils": "1.0.1",
         "resolve": "1.1.6"
     }
